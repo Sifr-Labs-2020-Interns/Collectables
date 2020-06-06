@@ -2,6 +2,10 @@
 
 A marketplace to buy and sell collectibles and curios such as coins, stamps, bank notes and much more.
 
+### Application currently in the prototyping and design phase
+
+Prototyping and designing using **Adobe XD Design Toolkit**
+
 ## Requirements
 
 ### System requirements
@@ -31,7 +35,6 @@ If Git for Windows is already installed, make sure you can run git commands from
 * Windows-only: Install the Google USB Driver.
 
 * Using a USB cable, plug your phone into your computer. If prompted on your device, authorize your computer to access your device.
-
 * In the terminal, run the flutter devices command to verify that Flutter recognizes your connected Android device. By default, Flutter uses the version of the Android SDK where your adb tool is based. If you want Flutter to use a different installation of the Android SDK, you must set the ANDROID_HOME environment variable to that installation directory.
 
 #### Set up the Android emulator
