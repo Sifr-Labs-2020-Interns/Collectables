@@ -3,7 +3,7 @@ import 'package:Collectables/utilities/index.dart';
 enum ThemeType { Light, Dark }
 
 class ThemeModel extends ChangeNotifier {
-  ThemeData currentTheme = darkTheme;
+  ThemeData currentTheme = lightTheme;
   ThemeType _themeType = ThemeType.Dark;
 
   toggleTheme() {
