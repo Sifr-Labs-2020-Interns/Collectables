@@ -5,6 +5,7 @@ GestureDetector getButton(BuildContext context, String text, Function func) {
     onTap: () {
       func();
     },
+    
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40),

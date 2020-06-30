@@ -6,6 +6,7 @@ export 'package:font_awesome_flutter/font_awesome_flutter.dart';
 export 'package:carousel_slider/carousel_slider.dart';
 export 'package:auto_size_text/auto_size_text.dart';
 export 'dart:io';
+export 'package:pin_code_text_field/pin_code_text_field.dart';
 
 // Firebase
 
@@ -26,6 +27,8 @@ export 'package:Collectables/utilities/sizedBox.dart';
 export 'package:Collectables/widgets/baseWidget.dart';
 export 'package:Collectables/widgets/textField.dart';
 export 'package:Collectables/widgets/button.dart';
+export 'package:Collectables/widgets/common/registration/registrationHeader.dart';
+export 'package:Collectables/widgets/common/registrationIcons.dart';
 
 // Responsive
 export 'package:Collectables/enums/device_screen_type.dart';
@@ -39,11 +42,17 @@ export 'package:Collectables/screens/homeView.dart';
 
 // Landscape for Tablet and Laptop
 export 'package:Collectables/screens/landscape/navBarLandscape.dart';
-export 'package:Collectables/screens/landscape/loginPageLandscape.dart';
+export 'package:Collectables/screens/landscape/registration/loginPageLandscape.dart';
+export 'package:Collectables/screens/landscape/registration/forgotPasswordLandscape.dart';
+export 'package:Collectables/screens/landscape/registration/signUpLandscape.dart';
+export 'package:Collectables/screens/landscape/registration/otpScreenLandscape.dart';
 
 // Portrait for Tablet and Phone
 export 'package:Collectables/screens/portrait/navBarPortrait.dart';
-export 'package:Collectables/screens/portrait/loginPagePortrait.dart';
+export 'package:Collectables/screens/portrait/registration/loginPagePortrait.dart';
+export 'package:Collectables/screens/portrait/registration/forgotPasswordPortrait.dart';
+export 'package:Collectables/screens/portrait/registration/signUpPortrait.dart';
+export 'package:Collectables/screens/portrait/registration/otpScreenPortrait.dart';
 
 // Services
 

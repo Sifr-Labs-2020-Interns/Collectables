@@ -1,8 +1,8 @@
 import 'package:Collectables/utilities/index.dart';
 
-TextField getTextField(BuildContext context, String labelText,
+TextFormField getTextField(BuildContext context, String labelText,
     TextEditingController controller, TextInputType type) {
-  return TextField(
+  return TextFormField(
     controller: controller,
     onChanged: (value) {},
     keyboardType: type,

@@ -1,4 +1,4 @@
-import 'package:Collectables/screens/portrait/loginPagePortrait.dart';
+import 'package:Collectables/screens/portrait/registration/loginPagePortrait.dart';
 import 'package:Collectables/utilities/index.dart';
 
 class HomeView extends StatelessWidget {
