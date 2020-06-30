@@ -1,6 +1,7 @@
+import 'package:Collectables/utilities/index.dart';
 import 'package:device_preview/device_preview.dart';
 
-import 'package:portfolio_website/utilities/index.dart';
+import 'package:Collectables/utilities/index.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

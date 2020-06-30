@@ -19,62 +19,62 @@ export 'package:flutter_full_pdf_viewer/full_pdf_viewer_scaffold.dart';
 export 'package:firebase_storage/firebase_storage.dart';
 
 // Models
-export 'package:portfolio_website/models/testimonialsModel.dart';
-export 'package:portfolio_website/models/blogModel.dart';
-export 'package:portfolio_website/models/themeModel.dart';
-export 'package:portfolio_website/models/homeViewModel.dart';
-export 'package:portfolio_website/models/projectModel.dart';
+export 'package:Collectables/models/testimonialsModel.dart';
+export 'package:Collectables/models/blogModel.dart';
+export 'package:Collectables/models/themeModel.dart';
+export 'package:Collectables/models/homeViewModel.dart';
+export 'package:Collectables/models/projectModel.dart';
 
 //Utilities
-export 'package:portfolio_website/utilities/elementsLength.dart';
-export 'package:portfolio_website/utilities/routes.dart';
-export 'package:portfolio_website/utilities/screenSize.dart';
-export 'package:portfolio_website/utilities/constants.dart';
-export 'package:portfolio_website/utilities/uiUtilities.dart';
-export 'package:portfolio_website/utilities/theme.dart';
-export 'package:portfolio_website/utilities/pdf_viewer/pdfScreen.dart';
+export 'package:Collectables/utilities/elementsLength.dart';
+export 'package:Collectables/utilities/routes.dart';
+export 'package:Collectables/utilities/screenSize.dart';
+export 'package:Collectables/utilities/constants.dart';
+export 'package:Collectables/utilities/uiUtilities.dart';
+export 'package:Collectables/utilities/theme.dart';
+export 'package:Collectables/utilities/pdf_viewer/pdfScreen.dart';
 
 //Widgets
-export 'package:portfolio_website/widgets/primaryButton.dart';
-export 'package:portfolio_website/widgets/baseWidget.dart';
-export 'package:portfolio_website/widgets/common/welcomePageWidgets.dart';
-export 'package:portfolio_website/widgets/common/blogsPageWidgets.dart';
-export 'package:portfolio_website/widgets/common/projectsPageWidgets.dart';
-export 'package:portfolio_website/widgets/common/testimonialsPageWidgets.dart';
-export 'package:portfolio_website/widgets/common/aboutPageWidgets.dart';
-export 'package:portfolio_website/widgets/urlLauncher.dart';
+export 'package:Collectables/widgets/primaryButton.dart';
+export 'package:Collectables/widgets/baseWidget.dart';
+export 'package:Collectables/widgets/common/welcomePageWidgets.dart';
+export 'package:Collectables/widgets/common/blogsPageWidgets.dart';
+export 'package:Collectables/widgets/common/projectsPageWidgets.dart';
+export 'package:Collectables/widgets/common/testimonialsPageWidgets.dart';
+export 'package:Collectables/widgets/common/aboutPageWidgets.dart';
+export 'package:Collectables/widgets/urlLauncher.dart';
 
 // Responsivea
-export 'package:portfolio_website/enums/device_screen_type.dart';
-export 'package:portfolio_website/responsive/responsive_builder.dart';
-export 'package:portfolio_website/responsive/sizing_information.dart';
-export 'package:portfolio_website/responsive/orientation_layout.dart';
-export 'package:portfolio_website/responsive/screen_type_layout.dart';
+export 'package:Collectables/enums/device_screen_type.dart';
+export 'package:Collectables/responsive/responsive_builder.dart';
+export 'package:Collectables/responsive/sizing_information.dart';
+export 'package:Collectables/responsive/orientation_layout.dart';
+export 'package:Collectables/responsive/screen_type_layout.dart';
 
 // HomeView
-export 'package:portfolio_website/screens/homeView.dart';
+export 'package:Collectables/screens/homeView.dart';
 
 // Landscape for Tablet and Laptop
-export 'package:portfolio_website/screens/Landscape/navigationBarLandscape.dart';
-export 'package:portfolio_website/screens/Landscape/welcomePageLandscape.dart';
-export 'package:portfolio_website/screens/Landscape/BlogPageLandscape.dart';
-export 'package:portfolio_website/screens/Landscape/projectsPageLandscape.dart';
-export 'package:portfolio_website/screens/Landscape/TestimonialsPageLandscape.dart';
-export 'package:portfolio_website/screens/Landscape/AboutPageLandscape.dart';
+export 'package:Collectables/screens/Landscape/navigationBarLandscape.dart';
+export 'package:Collectables/screens/Landscape/welcomePageLandscape.dart';
+export 'package:Collectables/screens/Landscape/BlogPageLandscape.dart';
+export 'package:Collectables/screens/Landscape/projectsPageLandscape.dart';
+export 'package:Collectables/screens/Landscape/TestimonialsPageLandscape.dart';
+export 'package:Collectables/screens/Landscape/AboutPageLandscape.dart';
 
 // Portrait for Tablet and Phone
-export 'package:portfolio_website/screens/Portrait/navigationBarPortrait.dart';
-export 'package:portfolio_website/screens/Portrait/welcomePagePortrait.dart';
-export 'package:portfolio_website/screens/Portrait/projectsPagePortrait.dart';
-export 'package:portfolio_website/screens/Portrait/blogsPagePortrait.dart';
-export 'package:portfolio_website/screens/Portrait/TestimonialsPagePortrait.dart';
-export 'package:portfolio_website/screens/Portrait/aboutPagePortrait.dart';
+export 'package:Collectables/screens/Portrait/navigationBarPortrait.dart';
+export 'package:Collectables/screens/Portrait/welcomePagePortrait.dart';
+export 'package:Collectables/screens/Portrait/projectsPagePortrait.dart';
+export 'package:Collectables/screens/Portrait/blogsPagePortrait.dart';
+export 'package:Collectables/screens/Portrait/TestimonialsPagePortrait.dart';
+export 'package:Collectables/screens/Portrait/aboutPagePortrait.dart';
 
 // Services
-export 'package:portfolio_website/services/databaseService.dart';
+export 'package:Collectables/services/databaseService.dart';
 
 // Providers
 export 'package:provider/provider.dart';
-export 'package:portfolio_website/providers/currentProjectIDProvider.dart';
-export 'package:portfolio_website/providers/currentPageProvider.dart';
-export 'package:portfolio_website/providers/pdfProviders.dart';
+export 'package:Collectables/providers/currentProjectIDProvider.dart';
+export 'package:Collectables/providers/currentPageProvider.dart';
+export 'package:Collectables/providers/pdfProviders.dart';

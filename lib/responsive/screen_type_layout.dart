@@ -1,4 +1,4 @@
-import 'package:portfolio_website/utilities/index.dart';
+import 'package:Collectables/utilities/index.dart';
 
 class ScreenTypeLayout extends StatelessWidget {
   final Widget mobile;
