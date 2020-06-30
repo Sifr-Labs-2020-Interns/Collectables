@@ -1,8 +1,6 @@
 import 'package:Collectables/utilities/index.dart';
 import 'package:device_preview/device_preview.dart';
 
-import 'package:Collectables/utilities/index.dart';
-
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   runApp(
@@ -19,23 +17,8 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    initializeBlogsData();
-    initializeTestimonialsData();
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<CurrentPageProvider>(
-          create: (context) => CurrentPageProvider(),
-        ),
-        ChangeNotifierProvider<CurrentProjectIDProvider>(
-          create: (context) => CurrentProjectIDProvider(),
-        ),
-        ChangeNotifierProvider<PDFProvider>(
-          create: (context) => PDFProvider(),
-        ),
-        FutureProvider<Map<String, List<Projects>>>.value(
-          value: getProjects(),
-        ),
-      ],
+      providers: [],
       child: MaterialApp(
         builder: DevicePreview.appBuilder,
         title: 'Portfolio - Alister Luiz',
