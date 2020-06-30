@@ -1,3 +1,4 @@
+
 import 'package:Collectables/utilities/index.dart';
 
 class HomeView extends StatelessWidget {
@@ -8,16 +9,16 @@ class HomeView extends StatelessWidget {
       onModelReady: (model) => model.initialise(),
       child: ScreenTypeLayout(
         mobile: OrientationLayout(
-          portrait: (context) => NavBarPortrait(),
-          landscape: (context) => NavBarLandscape(),
+          portrait: (context) => NavigationBarPortrait(),
+          landscape: (context) => NavigationBarLandscape(),
         ),
         tablet: OrientationLayout(
-          portrait: (context) => NavBarPortrait(),
-          landscape: (context) => NavBarLandscape(),
+          portrait: (context) => NavigationBarPortrait(),
+          landscape: (context) => NavigationBarLandscape(),
         ),
         desktop: OrientationLayout(
-          portrait: (context) => NavBarPortrait(),
-          landscape: (context) => NavBarLandscape(),
+          portrait: (context) => NavigationBarPortrait(),
+          landscape: (context) => NavigationBarLandscape(),
         ),
       ),
     );

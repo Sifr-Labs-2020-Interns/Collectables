@@ -34,8 +34,10 @@ export 'package:Collectables/responsive/screen_type_layout.dart';
 export 'package:Collectables/screens/homeView.dart';
 
 // Landscape for Tablet and Laptop
+export 'package:Collectables/screens/landscape/navBarLandscape.dart';
 
 // Portrait for Tablet and Phone
+export 'package:Collectables/screens/portrait/navBarPortrait.dart';
 
 // Services
 
