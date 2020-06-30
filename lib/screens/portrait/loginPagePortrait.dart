@@ -63,10 +63,68 @@ class _LoginPagePortraitState extends State<LoginPagePortrait> {
                   ),
                   sizedBox(15, 0),
                   getButton(context, 'LOGIN', () {}),
+                  sizedBox(30, 0),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text('Don\'t have an account?'),
+                      sizedBox(0, 5),
+                      Text(
+                        'Sign Up',
+                        style: TextStyle(color: Theme.of(context).accentColor),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
+            Center(
+              child: Text('Or login with social account'),
+            ),
+            sizedBox(15, 0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                getLoginIcons(
+                  context,
+                  'assets/images/google.png',
+                ),
+                sizedBox(0, 30),
+                getLoginIcons(
+                  context,
+                  'assets/images/facebook.png',
+                ),
+              ],
+            ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Container getLoginIcons(BuildContext context, String image) {
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(40),
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Theme.of(context).secondaryHeaderColor,
+            offset: Offset(
+              0.0,
+              1.0,
+            ), //(x,y)
+            blurRadius: 3.0,
+          ),
+        ],
+      ),
+      height: 60,
+      width: 60,
+      child: Center(
+        child: Image.asset(
+          image,
+          height: 30,
+          width: 30,
         ),
       ),
     );

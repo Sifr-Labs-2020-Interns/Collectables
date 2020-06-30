@@ -17,7 +17,6 @@ GestureDetector getButton(BuildContext context, String text, Function func) {
           ),
         ],
       ),
-      width: screenWidth(context),
       height: 50,
       child: Center(
         child: Text(
