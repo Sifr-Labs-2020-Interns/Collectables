@@ -17,16 +17,13 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [],
-      child: MaterialApp(
-        builder: DevicePreview.appBuilder,
-        title: 'Portfolio - Alister Luiz',
-        theme: Provider.of<ThemeModel>(context).currentTheme,
-        initialRoute: Routes.homeView,
-        routes: Routes.routes,
-        debugShowCheckedModeBanner: false,
-      ),
+    return MaterialApp(
+      builder: DevicePreview.appBuilder,
+      title: 'Portfolio - Alister Luiz',
+      theme: Provider.of<ThemeModel>(context).currentTheme,
+      initialRoute: Routes.homeView,
+      routes: Routes.routes,
+      debugShowCheckedModeBanner: false,
     );
   }
 }
