@@ -11,6 +11,7 @@ export 'dart:io';
 
 // Models
 export 'package:Collectables/models/themeModel.dart';
+export 'package:Collectables/models/homeViewModel.dart';
 
 //Utilities
 export 'package:Collectables/utilities/routes.dart';
