@@ -7,6 +7,7 @@ export 'package:carousel_slider/carousel_slider.dart';
 export 'package:auto_size_text/auto_size_text.dart';
 export 'dart:io';
 export 'package:pin_code_text_field/pin_code_text_field.dart';
+export 'dart:async';
 
 // Firebase
 
@@ -29,6 +30,10 @@ export 'package:Collectables/widgets/textField.dart';
 export 'package:Collectables/widgets/button.dart';
 export 'package:Collectables/widgets/common/registration/registrationHeader.dart';
 export 'package:Collectables/widgets/common/registrationIcons.dart';
+export 'package:Collectables/widgets/slider/slide_dots.dart';
+export 'package:Collectables/widgets/slider/slide_item.dart';
+export 'package:Collectables/widgets/slider/slide_model.dart';
+export 'package:Collectables/widgets/slider/advertBanner.dart';
 
 // Responsive
 export 'package:Collectables/enums/device_screen_type.dart';

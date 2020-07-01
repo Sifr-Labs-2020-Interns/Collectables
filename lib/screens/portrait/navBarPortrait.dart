@@ -32,7 +32,7 @@ class _NavigationBarState extends State<NavigationBarPortrait> {
           type: BottomNavigationBarType.fixed,
           showUnselectedLabels: true,
           selectedItemColor: Theme.of(context).accentColor,
-          unselectedItemColor: Theme.of(context).primaryColor,
+          unselectedItemColor: Theme.of(context).secondaryHeaderColor,
           backgroundColor: Theme.of(context).cardColor,
           items: [
             BottomNavigationBarItem(
@@ -67,7 +67,7 @@ class _NavigationBarState extends State<NavigationBarPortrait> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                FontAwesomeIcons.heart,
+                FontAwesomeIcons.solidHeart,
                 semanticLabel: 'Favorites',
               ),
               title: Text(
@@ -77,7 +77,7 @@ class _NavigationBarState extends State<NavigationBarPortrait> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                FontAwesomeIcons.user,
+                FontAwesomeIcons.solidUser,
                 semanticLabel: 'Profile',
               ),
               title: Text(
