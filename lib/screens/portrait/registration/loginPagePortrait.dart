@@ -53,7 +53,14 @@ class _LoginPagePortraitState extends State<LoginPagePortrait> {
                       ),
                     ),
                     sizedBox(15, 0),
-                    getButton(context, 'LOGIN', () {}),
+                    getButton(
+                      context,
+                      'LOGIN',
+                      () {
+                        Navigator.pushNamed(
+                            context, Routes.navigationScreenPortrait);
+                      },
+                    ),
                     sizedBox(30, 0),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
