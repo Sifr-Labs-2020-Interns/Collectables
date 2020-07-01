@@ -6,14 +6,14 @@ class OTPScreenPortrait extends StatefulWidget {
 }
 
 class _OTPScreenPortraitState extends State<OTPScreenPortrait> {
-  @override
+  // String thisText = "";
+  int pinLength = 4;
+  bool hasError = false;
+  // String errorMessage;
+  String pin = '';
   Widget build(BuildContext context) {
     TextEditingController controller = TextEditingController();
-    String thisText = "";
-    int pinLength = 4;
-    bool hasError = false;
-    String errorMessage;
-    String pin = '';
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
