@@ -8,7 +8,8 @@ class AdvertBanner extends StatefulWidget {
 
 class _AdvertBannerState extends State<AdvertBanner> {
   int _currentPage = 0;
-  final InfinityPageController _pageController = InfinityPageController(initialPage: 0);
+  final InfinityPageController _pageController =
+      InfinityPageController(initialPage: 0);
 
   @override
   void initState() {
@@ -39,28 +40,26 @@ class _AdvertBannerState extends State<AdvertBanner> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Stack(
-        alignment: AlignmentDirectional.bottomCenter,
-        children: <Widget>[
-          InfinityPageView(
-            reverse: true,
-            scrollDirection: Axis.horizontal,
-            controller: _pageController,
-            onPageChanged: _onPageChanged,
-            itemCount: slideList.length,
-            itemBuilder: (ctx, i) => SlideItem(i),
-          ),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              for (int i = 0; i < slideList.length; i++)
-                if (i == _currentPage) SlideDots(true) else SlideDots(false)
-            ],
-          )
-        ],
-      ),
+    return Stack(
+      alignment: AlignmentDirectional.bottomCenter,
+      children: <Widget>[
+        InfinityPageView(
+          reverse: true,
+          scrollDirection: Axis.horizontal,
+          controller: _pageController,
+          onPageChanged: _onPageChanged,
+          itemCount: slideList.length,
+          itemBuilder: (ctx, i) => SlideItem(i),
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            for (int i = 0; i < slideList.length; i++)
+              if (i == _currentPage) SlideDots(true) else SlideDots(false)
+          ],
+        )
+      ],
     );
   }
 }
