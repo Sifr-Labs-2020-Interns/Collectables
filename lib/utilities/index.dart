@@ -53,8 +53,10 @@ export 'package:Collectables/screens/portrait/registration/loginPagePortrait.dar
 export 'package:Collectables/screens/portrait/registration/forgotPasswordPortrait.dart';
 export 'package:Collectables/screens/portrait/registration/signUpPortrait.dart';
 export 'package:Collectables/screens/portrait/registration/otpScreenPortrait.dart';
+export 'package:Collectables/screens/portrait/home/homeScreenPortrait.dart';
 
 // Services
 
 // Providers
 export 'package:provider/provider.dart';
+export 'package:Collectables/providers/currentIndexProvider.dart';

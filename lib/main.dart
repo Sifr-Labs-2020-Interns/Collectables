@@ -17,13 +17,20 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      builder: DevicePreview.appBuilder,
-      title: 'Portfolio - Alister Luiz',
-      theme: Provider.of<ThemeModel>(context).currentTheme,
-      initialRoute: Routes.homeView,
-      routes: Routes.routes,
-      debugShowCheckedModeBanner: false,
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<CurrentIndexProvider>(
+          create: (context) => CurrentIndexProvider(),
+        ),
+      ],
+      child: MaterialApp(
+        builder: DevicePreview.appBuilder,
+        title: 'Portfolio - Alister Luiz',
+        theme: Provider.of<ThemeModel>(context).currentTheme,
+        initialRoute: Routes.homeView,
+        routes: Routes.routes,
+        debugShowCheckedModeBanner: false,
+      ),
     );
   }
 }

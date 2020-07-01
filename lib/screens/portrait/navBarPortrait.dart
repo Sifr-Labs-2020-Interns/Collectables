@@ -1,33 +1,26 @@
 import 'package:Collectables/utilities/index.dart';
 
-class NavigationBarPortriat extends StatefulWidget {
+class NavigationBarPortrait extends StatefulWidget {
   @override
   _NavigationBarState createState() => _NavigationBarState();
 }
 
-class _NavigationBarState extends State<NavigationBarPortriat> {
-  // int currentIndex = 0;
+class _NavigationBarState extends State<NavigationBarPortrait> {
   @override
   void initState() {
     super.initState();
   }
 
-  final controller = PageController(
-    initialPage: 1,
-  );
-
   Widget build(BuildContext context) {
     final currentIndex = Provider.of<CurrentIndexProvider>(context);
 
     final List<Widget> _children = [
-      WelcomePage(),
-      SearchPage(),
-      VerificationPage(),
-      RankingPage(),
-      ProfilePage()
+      HomeScreenPortrait(),
     ];
+
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: _children[currentIndex.getIndex()],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentIndex.getIndex(),
@@ -38,14 +31,14 @@ class _NavigationBarState extends State<NavigationBarPortriat> {
           },
           type: BottomNavigationBarType.fixed,
           showUnselectedLabels: true,
-          selectedItemColor: Theme.of(context).primaryColor,
-          unselectedItemColor: Theme.of(context).accentColor,
+          selectedItemColor: Theme.of(context).accentColor,
+          unselectedItemColor: Theme.of(context).primaryColor,
           backgroundColor: Theme.of(context).cardColor,
           items: [
             BottomNavigationBarItem(
               icon: Icon(
                 FontAwesomeIcons.home,
-                semanticLabel: 'Welcome Page',
+                semanticLabel: 'Home Page',
               ),
               title: Text(
                 'Home',
@@ -54,38 +47,38 @@ class _NavigationBarState extends State<NavigationBarPortriat> {
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                FontAwesomeIcons.search,
-                semanticLabel: 'Search News Articles',
+                FontAwesomeIcons.shoppingCart,
+                semanticLabel: 'Shopping Page',
               ),
               title: Text(
-                'Search',
+                'Shop',
                 style: kNavigationBarTextStyle,
               ),
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                FontAwesomeIcons.newspaper,
-                semanticLabel: 'Verify News Articles',
+                FontAwesomeIcons.shoppingBag,
+                semanticLabel: 'Bag',
               ),
               title: Text(
-                'Verify',
+                'Bag',
                 style: kNavigationBarTextStyle,
               ),
             ),
             BottomNavigationBarItem(
               icon: Icon(
-                FontAwesomeIcons.userShield,
-                semanticLabel: 'Ranking News Sources',
+                FontAwesomeIcons.heart,
+                semanticLabel: 'Favorites',
               ),
               title: Text(
-                'Ranking',
+                'Favorites',
                 style: kNavigationBarTextStyle,
               ),
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 FontAwesomeIcons.user,
-                semanticLabel: 'Profile Page',
+                semanticLabel: 'Profile',
               ),
               title: Text(
                 'Profile',
