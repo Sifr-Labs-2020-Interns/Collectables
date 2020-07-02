@@ -5,8 +5,21 @@ ThemeData darkTheme = ThemeData(
   accentColor: Color(0xff00C569),
   fontFamily: 'Montserrat',
   appBarTheme: AppBarTheme(
-    elevation: 0.0,
+    elevation: 1.0,
     color: Color(0xff000000),
+    textTheme: TextTheme(
+      headline6: TextStyle(
+        color: Color(0xffffffff),
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
+      ),
+    ),
+    iconTheme: IconThemeData(
+      color: Color(0xffffffff),
+    ),
+  ),
+  tabBarTheme: TabBarTheme(
+    labelColor: Color(0xffffffff),
   ),
   backgroundColor: Color(0xff000000),
   scaffoldBackgroundColor: Color(0xff222222),
@@ -27,7 +40,20 @@ ThemeData lightTheme = ThemeData(
   cardColor: Color(0xffffffff),
   buttonColor: Color(0xffffffff),
   appBarTheme: AppBarTheme(
-    elevation: 0.0,
+    elevation: 1.0,
     color: Color(0xffffffff),
+    textTheme: TextTheme(
+      headline6: TextStyle(
+        color: Color(0xff000000),
+        fontSize: 20,
+        fontWeight: FontWeight.w700,
+      ),
+    ),
+    iconTheme: IconThemeData(
+      color: Color(0xff000000),
+    ),
+  ),
+  tabBarTheme: TabBarTheme(
+    labelColor: Color(0xff000000),
   ),
 );

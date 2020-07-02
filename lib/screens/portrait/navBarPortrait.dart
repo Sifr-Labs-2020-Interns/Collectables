@@ -16,6 +16,7 @@ class _NavigationBarState extends State<NavigationBarPortrait> {
 
     final List<Widget> _children = [
       HomeScreenPortrait(),
+      ShopScreenPortrait(),
     ];
 
     return SafeArea(
@@ -33,7 +34,7 @@ class _NavigationBarState extends State<NavigationBarPortrait> {
           showUnselectedLabels: true,
           selectedItemColor: Theme.of(context).accentColor,
           unselectedItemColor: Theme.of(context).secondaryHeaderColor,
-          backgroundColor: Theme.of(context).cardColor,
+          backgroundColor: Theme.of(context).backgroundColor,
           items: [
             BottomNavigationBarItem(
               icon: Icon(

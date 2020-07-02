@@ -59,6 +59,7 @@ export 'package:Collectables/screens/portrait/registration/forgotPasswordPortrai
 export 'package:Collectables/screens/portrait/registration/signUpPortrait.dart';
 export 'package:Collectables/screens/portrait/registration/otpScreenPortrait.dart';
 export 'package:Collectables/screens/portrait/home/homeScreenPortrait.dart';
+export 'package:Collectables/screens/portrait/shop/shopScreenPortrait.dart';
 
 // Services
 
