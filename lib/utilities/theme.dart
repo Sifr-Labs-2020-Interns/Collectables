@@ -21,6 +21,7 @@ ThemeData darkTheme = ThemeData(
   tabBarTheme: TabBarTheme(
     labelColor: Color(0xffffffff),
   ),
+  cursorColor: Color(0xffffffff),
   backgroundColor: Color(0xff000000),
   scaffoldBackgroundColor: Color(0xff222222),
   secondaryHeaderColor: Color(0xff9B9B9B),
@@ -35,6 +36,7 @@ ThemeData lightTheme = ThemeData(
   scaffoldBackgroundColor: Color(0xfffdfdfd),
   accentColor: Color(0xff00C569),
   primaryColor: Color(0xff000000),
+  cursorColor: Color(0xff000000),
   secondaryHeaderColor: Color(0xff9B9B9B),
   fontFamily: 'Montserrat',
   cardColor: Color(0xffffffff),
