@@ -219,7 +219,7 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
                                     itemBuilder: (context, index) {
                                       return Container(
                                         padding: const EdgeInsets.symmetric(
-                                          vertical: 5.0,
+                                          vertical: 10.0,
                                         ),
                                         child: Column(
                                           crossAxisAlignment:

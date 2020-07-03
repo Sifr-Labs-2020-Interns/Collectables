@@ -12,7 +12,7 @@ GestureDetector getButton(BuildContext context, String text, Function func) {
         boxShadow: [
           BoxShadow(
             color: Theme.of(context).secondaryHeaderColor,
-            offset: Offset(0.0, 1.0), //(x,y)
+            offset: Offset(0.0, 1.0),
           ),
         ],
       ),
