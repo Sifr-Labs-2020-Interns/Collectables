@@ -1,4 +1,5 @@
 import 'package:Collectables/utilities/index.dart';
+import 'package:country_provider/country_provider.dart';
 import 'package:search_page/search_page.dart';
 
 class ShopScreenPortrait extends StatefulWidget {
@@ -8,11 +9,21 @@ class ShopScreenPortrait extends StatefulWidget {
 
 class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
   List countries = [
-    'Asia & Oceania',
+    'Asia',
     'Europe',
     'Americas',
     'Africa',
+    'Oceania',
   ];
+  bool isLoading = false;
+  List<Country> result = [];
+  void getCountryByContinent(String search) async {
+    isLoading = true;
+    setState(() {});
+    result = await CountryProvider.getcountryByRegionalBloc(search);
+    isLoading = false;
+    setState(() {});
+  }
 
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -34,8 +45,24 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
                     barTheme: (Provider.of<ThemeModel>(context, listen: false)
                                 .currentTheme ==
                             darkTheme)
-                        ? lightTheme
-                        : darkTheme,
+                        ? ThemeData(
+                            primaryColor: Colors.black,
+                            textTheme: TextTheme(
+                              headline6: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                            fontFamily: 'Montserrat',
+                          )
+                        : ThemeData(
+                            primaryColor: Colors.white,
+                            textTheme: TextTheme(
+                              headline6: TextStyle(
+                                color: Colors.black,
+                              ),
+                            ),
+                            fontFamily: 'Montserrat',
+                          ),
                     items: ['1', '2', '3'],
                     searchLabel: 'Search Items',
                     suggestion: Center(
@@ -95,6 +122,7 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
                 'SALE',
                 style: TextStyle(
                   fontSize: 30,
+                  color: Theme.of(context).buttonColor,
                   fontWeight: FontWeight.w800,
                 ),
               ),
@@ -102,6 +130,7 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
                 'Hurry up before its over!',
                 style: TextStyle(
                   fontSize: 15,
+                  color: Theme.of(context).buttonColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -115,40 +144,105 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
           itemCount: countries.length,
           itemBuilder: (context, index) {
             return Container(
-              height: screenHeight(context) * 0.18,
-              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
-              child: Card(
+              margin: const EdgeInsets.symmetric(
+                horizontal: 15,
+                vertical: 5,
+              ),
+              decoration: BoxDecoration(
                 color: Theme.of(context).cardColor,
-                semanticContainer: true,
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(5.0),
+                borderRadius: BorderRadius.circular(5),
+              ),
+              child: Theme(
+                data: Theme.of(context).copyWith(
+                  dividerColor: Colors.transparent,
+                  dividerTheme: DividerThemeData(
+                      color: Theme.of(context).colorScheme.background),
                 ),
-                elevation: 2,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Expanded(
-                      child: Container(
-                        padding: EdgeInsets.only(
-                          left: 10,
-                        ),
-                        child: AutoSizeText(
-                          countries[index],
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w700,
-                          ),
-                          maxLines: 1,
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Image(
-                        image: NetworkImage(
-                          'https://upload.wikimedia.org/wikipedia/commons/7/70/Kawasaki_Candy_Lime_Green.png',
-                        ),
+                child: ExpansionTile(
+                  onExpansionChanged: (boolean) {
+                    setState(() {});
+                    getCountryByContinent(countries[index]);
+                  },
+                  tilePadding: EdgeInsets.zero,
+                  title: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Image.network(
+                        'https://upload.wikimedia.org/wikipedia/commons/7/70/Kawasaki_Candy_Lime_Green.png',
+                        height: screenHeight(context) * 0.15,
                         fit: BoxFit.cover,
+                      ),
+                      AutoSizeText(
+                        countries[index],
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w700,
+                        ),
+                        maxLines: 1,
+                      ),
+                    ],
+                  ),
+                  trailing: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [],
+                  ),
+                  expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 10,
+                        horizontal: 10,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          getButton(context, 'VIEW ALL ITEMS', () {}),
+                          sizedBox(10, 0),
+                          Text(
+                            'Choose Country',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Theme.of(context).secondaryHeaderColor,
+                            ),
+                          ),
+                          sizedBox(10, 0),
+                          Container(
+                            height: screenHeight(context) * 0.2,
+                            child: (isLoading == true)
+                                ? Center(
+                                    child: CircularProgressIndicator(),
+                                  )
+                                : ListView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: result.length,
+                                    itemBuilder: (context, index) {
+                                      return Container(
+                                        padding: const EdgeInsets.symmetric(
+                                          vertical: 5.0,
+                                        ),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Text(
+                                              result[index].name,
+                                              style: TextStyle(
+                                                fontSize: 14,
+                                              ),
+                                            ),
+                                            Divider(
+                                              color:
+                                                  Theme.of(context).buttonColor,
+                                            ),
+                                          ],
+                                        ),
+                                      );
+                                    }),
+                          )
+                        ],
                       ),
                     ),
                   ],
@@ -161,85 +255,3 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
     );
   }
 }
-
-// class CustomSearchDelegate extends SearchDelegate {
-//   List<Widget> buildActions(BuildContext context) {
-//     return [
-//       IconButton(
-//         icon: Icon(Icons.clear),
-//         onPressed: () {
-//           query = '';
-//         },
-//       ),
-//     ];
-//   }
-
-//   @override
-//   Widget buildLeading(BuildContext context) {
-//     return IconButton(
-//       icon: Icon(Icons.arrow_back),
-//       onPressed: () {
-//         close(context, null);
-//       },
-//     );
-//   }
-
-//   @override
-//   Widget buildResults(BuildContext context) {
-//     if (query.length < 3) {
-//       return Column(
-//         mainAxisAlignment: MainAxisAlignment.center,
-//         children: <Widget>[
-//           Center(
-//             child: Text(
-//               "Search term must be longer than two letters.",
-//             ),
-//           )
-//         ],
-//       );
-//     }
-
-//     return Column(
-//       children: <Widget>[
-//         StreamBuilder(
-//           stream: null,
-//           builder: (context, AsyncSnapshot<List> snapshot) {
-//             if (!snapshot.hasData) {
-//               return Column(
-//                 crossAxisAlignment: CrossAxisAlignment.center,
-//                 mainAxisAlignment: MainAxisAlignment.center,
-//                 children: <Widget>[
-//                   Center(child: CircularProgressIndicator()),
-//                 ],
-//               );
-//             } else if (snapshot.data.length == 0) {
-//               return Column(
-//                 children: <Widget>[
-//                   Text(
-//                     "No Results Found.",
-//                   ),
-//                 ],
-//               );
-//             } else {
-//               var results = snapshot.data;
-//               return ListView.builder(
-//                 itemCount: results.length,
-//                 itemBuilder: (context, index) {
-//                   var result = results[index];
-//                   return ListTile(
-//                     title: Text(result.title),
-//                   );
-//                 },
-//               );
-//             }
-//           },
-//         ),
-//       ],
-//     );
-//   }
-
-//   @override
-//   Widget buildSuggestions(BuildContext context) {
-//     return Column();
-//   }
-// }

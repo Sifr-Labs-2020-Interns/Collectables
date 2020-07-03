@@ -5,7 +5,6 @@ GestureDetector getButton(BuildContext context, String text, Function func) {
     onTap: () {
       func();
     },
-    
     child: Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(40),
@@ -14,7 +13,6 @@ GestureDetector getButton(BuildContext context, String text, Function func) {
           BoxShadow(
             color: Theme.of(context).secondaryHeaderColor,
             offset: Offset(0.0, 1.0), //(x,y)
-            blurRadius: 6.0,
           ),
         ],
       ),

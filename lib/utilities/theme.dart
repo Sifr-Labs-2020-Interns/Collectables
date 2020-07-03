@@ -3,59 +3,61 @@ import 'package:Collectables/utilities/index.dart';
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   accentColor: Color(0xff00C569),
+  
   fontFamily: 'Montserrat',
   appBarTheme: AppBarTheme(
     elevation: 1.0,
-    color: Color(0xff000000),
+    color: Colors.black,
     textTheme: TextTheme(
       headline6: TextStyle(
-        color: Color(0xffffffff),
+        color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.w700,
       ),
     ),
     iconTheme: IconThemeData(
-      color: Color(0xffffffff),
+      color: Colors.white,
     ),
+    
   ),
   tabBarTheme: TabBarTheme(
-    labelColor: Color(0xffffffff),
+    labelColor: Colors.white,
   ),
-  cursorColor: Color(0xffffffff),
-  backgroundColor: Color(0xff000000),
+  cursorColor: Colors.white,
+  backgroundColor: Colors.black,
   scaffoldBackgroundColor: Color(0xff222222),
   secondaryHeaderColor: Color(0xff9B9B9B),
   cardColor: Color(0xff2A2C36),
-  primaryColor: Color(0xffffffff),
-  buttonColor: Color(0xffffffff),
+  primaryColor: Colors.white,
+  buttonColor: Colors.white,
 );
 
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
-  backgroundColor: Color(0xffffffff),
+  backgroundColor: Colors.white,
   scaffoldBackgroundColor: Color(0xfffdfdfd),
   accentColor: Color(0xff00C569),
-  primaryColor: Color(0xff000000),
-  cursorColor: Color(0xff000000),
+  primaryColor: Colors.black,
+  cursorColor: Colors.black,
   secondaryHeaderColor: Color(0xff9B9B9B),
   fontFamily: 'Montserrat',
-  cardColor: Color(0xffffffff),
-  buttonColor: Color(0xffffffff),
+  cardColor: Colors.white,
+  buttonColor: Colors.white,
   appBarTheme: AppBarTheme(
     elevation: 1.0,
-    color: Color(0xffffffff),
+    color: Colors.white,
     textTheme: TextTheme(
       headline6: TextStyle(
-        color: Color(0xff000000),
+        color: Colors.black,
         fontSize: 20,
         fontWeight: FontWeight.w700,
       ),
     ),
     iconTheme: IconThemeData(
-      color: Color(0xff000000),
+      color: Colors.black,
     ),
   ),
   tabBarTheme: TabBarTheme(
-    labelColor: Color(0xff000000),
+    labelColor: Colors.black,
   ),
 );
