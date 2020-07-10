@@ -1,4 +1,5 @@
 import 'package:Collectables/utilities/index.dart';
+
 class HomeScreenPortrait extends StatefulWidget {
   @override
   _HomeScreenPortraitState createState() => _HomeScreenPortraitState();
@@ -12,7 +13,6 @@ class _HomeScreenPortraitState extends State<HomeScreenPortrait> {
     'Antiques',
     'Art'
   ];
-  Map favorite = {};
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,13 +72,13 @@ class _HomeScreenPortraitState extends State<HomeScreenPortrait> {
                   sizedBox(15, 0),
                   getHomeHeader(context, 'Sale', 'Items currently on sale'),
                   sizedBox(5, 0),
-                  getItemCardList(context, favorite, () {
+                  getItemCardList(context, () {
                     setState(() {});
                   }),
                   sizedBox(5, 0),
                   getHomeHeader(context, 'New', 'Latest entries to the store!'),
                   sizedBox(5, 0),
-                  getItemCardList(context,favorite, () {
+                  getItemCardList(context, () {
                     setState(() {});
                   }),
                   sizedBox(5, 0),
@@ -91,4 +91,3 @@ class _HomeScreenPortraitState extends State<HomeScreenPortrait> {
     );
   }
 }
-

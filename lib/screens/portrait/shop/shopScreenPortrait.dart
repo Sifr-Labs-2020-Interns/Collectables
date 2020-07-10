@@ -63,19 +63,57 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
                             ),
                             fontFamily: 'Montserrat',
                           ),
-                    items: ['1', '2', '3'],
-                    searchLabel: 'Search Items',
-                    suggestion: Center(
-                      child: Text('Filter Items'),
+                    items: ['Campaign Name', 'Campaign Name', 'Campaign Name'],
+                    searchLabel: 'Search Campaigns',
+                    suggestion: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 20,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          getHomeHeader(context, 'Recent Searches',
+                              'Campaigns that you have searched previously'),
+                          sizedBox(10, 0),
+                          getItemCardList(context, () {
+                            setState(() {});
+                          }),
+                        ],
+                      ),
                     ),
-                    failure: Center(
-                      child: Text('No Item Found'),
+                    // failure: Center(
+                    //   child: Text('No Campaign Found :('),
+                    // ),
+                    failure: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 20,
+                      ),
+                      child: GridView.builder(
+                          itemCount: 5,
+                          gridDelegate:
+                              SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            childAspectRatio: screenWidth(context) *
+                                0.5 /
+                                (screenHeight(context) * 0.35),
+                          ),
+                          itemBuilder: (BuildContext context, int index) {
+                            return getItemCard(
+                              context,
+                              () {
+                                setState(() {});
+                              },
+                            );
+                          }),
                     ),
-                    filter: (person) => [],
-                    builder: (person) => ListTile(
-                      title: Text('Test'),
-                      subtitle: Text('Test'),
-                      trailing: Text('Test'),
+                    filter: (filter) => [],
+                    builder: (filter) => getItemCardList(
+                      context,
+                      () {
+                        setState(() {});
+                      },
                     ),
                   ),
                 );

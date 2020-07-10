@@ -1,21 +1,19 @@
 import 'package:Collectables/utilities/index.dart';
 
-Container getItemCardList(
-    BuildContext context, Map favorite, Function setState) {
+Container getItemCardList(BuildContext context, Function setState) {
   return Container(
     height: screenHeight(context) * 0.3,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: 5,
       itemBuilder: (BuildContext context, int index) {
-        return getItemCard(context, favorite, index, setState);
+        return getItemCard(context, setState);
       },
     ),
   );
 }
 
-InkWell getItemCard(
-    BuildContext context, Map favorite, int index, Function setState) {
+InkWell getItemCard(BuildContext context, Function setState) {
   return InkWell(
     onTap: () {},
     child: Stack(
@@ -90,11 +88,11 @@ InkWell getItemCard(
           left: 100,
           child: GestureDetector(
             onTap: () {
-              if (favorite[index] != null)
-                favorite[index] = !favorite[index];
-              else
-                favorite[index] = true;
-              setState();
+              // if (favorite[index] != null)
+              //   favorite[index] = !favorite[index];
+              // else
+              //   favorite[index] = true;
+              // setState();
             },
             child: Card(
               elevation: 2,
@@ -102,12 +100,14 @@ InkWell getItemCard(
               child: CircleAvatar(
                 backgroundColor: Theme.of(context).buttonColor,
                 child: Icon(
-                  (favorite[index] == false)
-                      ? FontAwesomeIcons.heart
-                      : FontAwesomeIcons.solidHeart,
-                  color: (favorite[index] == false)
-                      ? Theme.of(context).secondaryHeaderColor
-                      : Theme.of(context).accentColor,
+                  // (favorite[index] == false)
+                  //     ? FontAwesomeIcons.heart
+                  //     : FontAwesomeIcons.solidHeart,
+                  FontAwesomeIcons.heart,
+                  // color: (favorite[index] == false)
+                  //     ? Theme.of(context).secondaryHeaderColor
+                  //     : Theme.of(context).accentColor,
+                  color: Theme.of(context).secondaryHeaderColor,
                   size: 20,
                 ),
               ),
