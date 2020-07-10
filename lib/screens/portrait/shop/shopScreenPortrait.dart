@@ -25,6 +25,8 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
     setState(() {});
   }
 
+  Map<int, bool> expanded = {};
+
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 3,

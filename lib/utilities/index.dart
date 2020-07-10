@@ -8,6 +8,8 @@ export 'package:auto_size_text/auto_size_text.dart';
 export 'dart:io';
 export 'package:pin_code_text_field/pin_code_text_field.dart';
 export 'dart:async';
+export 'package:Collectables/widgets/expansionTile/expandableSection.dart';
+export 'package:Collectables/widgets/expansionTile/rotatableSection.dart';
 
 // Firebase
 
