@@ -33,12 +33,18 @@ InkWell getItemCard(BuildContext context, Function setState) {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image(
-                  image: NetworkImage(
-                    'https://upload.wikimedia.org/wikipedia/commons/7/70/Kawasaki_Candy_Lime_Green.png',
+                ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(5),
+                    topRight: Radius.circular(5),
                   ),
-                  fit: BoxFit.cover,
-                  width: 150,
+                  child: Image(
+                    image: NetworkImage(
+                      'https://upload.wikimedia.org/wikipedia/commons/7/70/Kawasaki_Candy_Lime_Green.png',
+                    ),
+                    fit: BoxFit.cover,
+                    width: 150,
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8.0),

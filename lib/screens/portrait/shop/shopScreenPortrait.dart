@@ -1,6 +1,6 @@
+import 'package:Collectables/screens/portrait/shop/itemsPage.dart';
 import 'package:Collectables/utilities/index.dart';
 import 'package:country_provider/country_provider.dart';
-import 'package:search_page/search_page.dart';
 
 class ShopScreenPortrait extends StatefulWidget {
   @override
@@ -41,84 +41,92 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
             IconButton(
               icon: Icon(Icons.search),
               onPressed: () {
-                showSearch(
-                  context: context,
-                  delegate: SearchPage(
-                    barTheme: (Provider.of<ThemeModel>(context, listen: false)
-                                .currentTheme ==
-                            darkTheme)
-                        ? ThemeData(
-                            primaryColor: Colors.black,
-                            textTheme: TextTheme(
-                              headline6: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                            fontFamily: 'Montserrat',
-                          )
-                        : ThemeData(
-                            primaryColor: Colors.white,
-                            textTheme: TextTheme(
-                              headline6: TextStyle(
-                                color: Colors.black,
-                              ),
-                            ),
-                            fontFamily: 'Montserrat',
-                          ),
-                    items: ['Campaign Name', 'Campaign Name', 'Campaign Name'],
-                    searchLabel: 'Search Campaigns',
-                    suggestion: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 20,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          getHomeHeader(context, 'Recent Searches',
-                              'Campaigns that you have searched previously'),
-                          sizedBox(10, 0),
-                          getItemCardList(context, () {
-                            setState(() {});
-                          }),
-                        ],
-                      ),
-                    ),
-                    // failure: Center(
-                    //   child: Text('No Campaign Found :('),
-                    // ),
-                    failure: Container(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: 20,
-                        vertical: 20,
-                      ),
-                      child: GridView.builder(
-                          itemCount: 5,
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            childAspectRatio: screenWidth(context) *
-                                0.5 /
-                                (screenHeight(context) * 0.35),
-                          ),
-                          itemBuilder: (BuildContext context, int index) {
-                            return getItemCard(
-                              context,
-                              () {
-                                setState(() {});
-                              },
-                            );
-                          }),
-                    ),
-                    filter: (filter) => [],
-                    builder: (filter) => getItemCardList(
-                      context,
-                      () {
-                        setState(() {});
-                      },
-                    ),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ItemsPagePortrait();
+                    },
                   ),
                 );
+                // showSearch(
+                //   context: context,
+                //   delegate: SearchPage(
+                //     barTheme: (Provider.of<ThemeModel>(context, listen: false)
+                //                 .currentTheme ==
+                //             darkTheme)
+                //         ? ThemeData(
+                //             primaryColor: Colors.black,
+                //             textTheme: TextTheme(
+                //               headline6: TextStyle(
+                //                 color: Colors.white,
+                //               ),
+                //             ),
+                //             fontFamily: 'Montserrat',
+                //           )
+                //         : ThemeData(
+                //             primaryColor: Colors.white,
+                //             textTheme: TextTheme(
+                //               headline6: TextStyle(
+                //                 color: Colors.black,
+                //               ),
+                //             ),
+                //             fontFamily: 'Montserrat',
+                //           ),
+                //     items: ['Campaign Name', 'Campaign Name', 'Campaign Name'],
+                //     searchLabel: 'Search Items',
+                //     suggestion: Container(
+                //       padding: EdgeInsets.symmetric(
+                //         horizontal: 20,
+                //         vertical: 20,
+                //       ),
+                //       child: Column(
+                //         crossAxisAlignment: CrossAxisAlignment.start,
+                //         children: [
+                //           getHomeHeader(context, 'Recent Searches',
+                //               'Items that you have searched previously'),
+                //           sizedBox(10, 0),
+                //           getItemCardList(context, () {
+                //             setState(() {});
+                //           }),
+                //         ],
+                //       ),
+                //     ),
+                //     // failure: Center(
+                //     //   child: Text('No Campaign Found :('),
+                //     // ),
+                //     failure: Container(
+                //       padding: EdgeInsets.symmetric(
+                //         horizontal: 20,
+                //         vertical: 20,
+                //       ),
+                //       child: GridView.builder(
+                //           itemCount: 5,
+                //           gridDelegate:
+                //               SliverGridDelegateWithFixedCrossAxisCount(
+                //             crossAxisCount: 2,
+                //             childAspectRatio: screenWidth(context) *
+                //                 0.5 /
+                //                 (screenHeight(context) * 0.35),
+                //           ),
+                //           itemBuilder: (BuildContext context, int index) {
+                //             return getItemCard(
+                //               context,
+                //               () {
+                //                 setState(() {});
+                //               },
+                //             );
+                //           }),
+                //     ),
+                //     filter: (filter) => [],
+                //     builder: (filter) => getItemCardList(
+                //       context,
+                //       () {
+                //         setState(() {});
+                //       },
+                //     ),
+                //   ),
+                // );
               },
             ),
           ],
