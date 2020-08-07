@@ -31,6 +31,7 @@ class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
+        elevation: 1,
         leading: Padding(
           padding: EdgeInsets.only(left: 14.0),
           child: IconButton(
@@ -46,6 +47,7 @@ class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
               ? Padding(
                   padding: EdgeInsets.only(
                     right: 14.0,
+                    top: 5.0,
                   ),
                   child: IconButton(
                     onPressed: () {
@@ -138,6 +140,19 @@ class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
             ),
           ),
         ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(14.0),
+        child: GridView.builder(
+            itemCount: 10,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              childAspectRatio:
+                  screenWidth(context) * 0.5 / (screenHeight(context) * 0.35),
+            ),
+            itemBuilder: (BuildContext context, int index) {
+              return getItemCard(context, setState);
+            }),
       ),
     );
   }
