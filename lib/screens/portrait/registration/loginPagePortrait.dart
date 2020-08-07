@@ -36,7 +36,7 @@ class _LoginPagePortraitState extends State<LoginPagePortrait> {
                       sizedBox(15, 0),
                       GestureDetector(
                         onTap: () {
-                          Navigator.pushNamed(
+                          Navigator.pushReplacementNamed(
                             context,
                             Routes.forgotPasswordPortrait,
                           );

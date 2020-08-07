@@ -143,16 +143,122 @@ class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(14.0),
-        child: GridView.builder(
-            itemCount: 10,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio:
-                  screenWidth(context) * 0.5 / (screenHeight(context) * 0.35),
-            ),
-            itemBuilder: (BuildContext context, int index) {
-              return getItemCard(context, setState);
-            }),
+        child: (grid == true)
+            ? GridView.builder(
+                itemCount: 10,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  childAspectRatio: screenWidth(context) *
+                      0.5 /
+                      (screenHeight(context) * 0.35),
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return getItemCard(context, setState);
+                })
+            : ListView.builder(
+                itemCount: 5,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(vertical: 8.0),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          top: 60,
+                          left: 280,
+                          child: GestureDetector(
+                            onTap: () {
+                              // if (favorite[index] != null)
+                              //   favorite[index] = !favorite[index];
+                              // else
+                              //   favorite[index] = true;
+                              // setState();
+                            },
+                            child: Card(
+                              elevation: 2,
+                              shape: CircleBorder(),
+                              child: CircleAvatar(
+                                backgroundColor: Theme.of(context).buttonColor,
+                                child: Icon(
+                                  // (favorite[index] == false)
+                                  //     ? FontAwesomeIcons.heart
+                                  //     : FontAwesomeIcons.solidHeart,
+                                  FontAwesomeIcons.heart,
+                                  // color: (favorite[index] == false)
+                                  //     ? Theme.of(context).secondaryHeaderColor
+                                  //     : Theme.of(context).accentColor,
+                                  color: Theme.of(context).secondaryHeaderColor,
+                                  size: 20,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Expanded(
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.only(
+                                  topLeft: Radius.circular(5),
+                                  bottomLeft: Radius.circular(5),
+                                ),
+                                child: Image.network(
+                                  'https://upload.wikimedia.org/wikipedia/commons/7/70/Kawasaki_Candy_Lime_Green.png',
+                                  height: screenHeight(context) * 0.15,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                            ),
+                            sizedBox(0, 10),
+                            Expanded(
+                              flex: 2,
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Column(
+                                    children: [
+                                      AutoSizeText(
+                                        'Item',
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                        maxLines: 2,
+                                      ),
+                                      AutoSizeText(
+                                        'Seller',
+                                        style: TextStyle(
+                                          fontSize: 11,
+                                          // fontWeight: FontWeight.bold,
+                                          color: Theme.of(context)
+                                              .secondaryHeaderColor,
+                                        ),
+                                        maxLines: 2,
+                                      ),
+                                    ],
+                                  ),
+                                  sizedBox(20, 0),
+                                  AutoSizeText(
+                                    '₹500',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                    maxLines: 2,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  );
+                }),
       ),
     );
   }

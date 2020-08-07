@@ -29,7 +29,7 @@ ThemeData darkTheme = ThemeData(
   secondaryHeaderColor: Color(0xff9B9B9B),
   cardColor: Color(0xff2A2C36),
   primaryColor: Colors.white,
-  buttonColor: Colors.white,
+  buttonColor: Color(0xff2A2C36),
 );
 
 ThemeData lightTheme = ThemeData(

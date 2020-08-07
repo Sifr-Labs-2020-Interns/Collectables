@@ -170,7 +170,7 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
                 'SALE',
                 style: TextStyle(
                   fontSize: 30,
-                  color: Theme.of(context).buttonColor,
+                  color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.w800,
                 ),
               ),
@@ -178,7 +178,7 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
                 'Hurry up before its over!',
                 style: TextStyle(
                   fontSize: 15,
-                  color: Theme.of(context).buttonColor,
+                  color: Theme.of(context).primaryColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),

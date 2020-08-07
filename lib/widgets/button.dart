@@ -21,7 +21,7 @@ GestureDetector getButton(BuildContext context, String text, Function func) {
         child: Text(
           text,
           style: TextStyle(
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).primaryColor,
             fontSize: 16,
           ),
         ),

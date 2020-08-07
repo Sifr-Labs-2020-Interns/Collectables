@@ -25,7 +25,7 @@ class _HomeScreenPortraitState extends State<HomeScreenPortrait> {
           color: Theme.of(context).accentColor,
           child: Icon(
             Icons.message,
-            color: Theme.of(context).buttonColor,
+            color: Theme.of(context).primaryColor,
           ),
         ),
       ),
