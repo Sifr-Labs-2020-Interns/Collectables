@@ -192,28 +192,26 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
                 color: Theme.of(context).cardColor,
                 borderRadius: BorderRadius.circular(5),
               ),
-              child: Theme(
-                data: Theme.of(context).copyWith(
-                  dividerColor: Colors.transparent,
-                  dividerTheme: DividerThemeData(
-                      color: Theme.of(context).colorScheme.background),
-                ),
-                child: ExpansionTile(
-                  onExpansionChanged: (boolean) {
-                    setState(() {});
-                    getCountryByContinent(countries[index]);
-                  },
-                  tilePadding: EdgeInsets.zero,
-                  title: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Image.network(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(5),
+                        bottomLeft: Radius.circular(5),
+                      ),
+                      child: Image.network(
                         'https://upload.wikimedia.org/wikipedia/commons/7/70/Kawasaki_Candy_Lime_Green.png',
                         height: screenHeight(context) * 0.15,
-                        fit: BoxFit.cover,
+                        fit: BoxFit.fill,
                       ),
-                      AutoSizeText(
+                    ),
+                  ),
+                  Expanded(
+                    child: Center(
+                      child: AutoSizeText(
                         countries[index],
                         style: TextStyle(
                           fontSize: 18,
@@ -221,73 +219,106 @@ class _ShopScreenPortraitState extends State<ShopScreenPortrait> {
                         ),
                         maxLines: 1,
                       ),
-                    ],
-                  ),
-                  trailing: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [],
-                  ),
-                  expandedCrossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                        vertical: 10,
-                        horizontal: 10,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          getButton(context, 'VIEW ALL ITEMS', () {}),
-                          sizedBox(10, 0),
-                          Text(
-                            'Choose Country',
-                            style: TextStyle(
-                              fontSize: 14,
-                              color: Theme.of(context).secondaryHeaderColor,
-                            ),
-                          ),
-                          sizedBox(10, 0),
-                          Container(
-                            height: screenHeight(context) * 0.2,
-                            child: (isLoading == true)
-                                ? Center(
-                                    child: CircularProgressIndicator(),
-                                  )
-                                : ListView.builder(
-                                    shrinkWrap: true,
-                                    itemCount: result.length,
-                                    itemBuilder: (context, index) {
-                                      return Container(
-                                        padding: const EdgeInsets.symmetric(
-                                          vertical: 10.0,
-                                        ),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceAround,
-                                          children: [
-                                            Text(
-                                              result[index].name,
-                                              style: TextStyle(
-                                                fontSize: 14,
-                                              ),
-                                            ),
-                                            Divider(
-                                              color:
-                                                  Theme.of(context).buttonColor,
-                                            ),
-                                          ],
-                                        ),
-                                      );
-                                    }),
-                          )
-                        ],
-                      ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
+              // child: Theme(
+              //   data: Theme.of(context).copyWith(
+              //     dividerColor: Colors.transparent,
+              //     dividerTheme: DividerThemeData(
+              //         color: Theme.of(context).colorScheme.background),
+              //   ),
+              //   child: ExpansionTile(
+              //     onExpansionChanged: (boolean) {
+              //       setState(() {});
+              //       getCountryByContinent(countries[index]);
+              //     },
+              //     tilePadding: EdgeInsets.zero,
+              // title: Row(
+              //   crossAxisAlignment: CrossAxisAlignment.center,
+              //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              //   children: [
+              //     Image.network(
+              //       'https://upload.wikimedia.org/wikipedia/commons/7/70/Kawasaki_Candy_Lime_Green.png',
+              //       height: screenHeight(context) * 0.15,
+              //       fit: BoxFit.cover,
+              //     ),
+              //     AutoSizeText(
+              //       countries[index],
+              //       style: TextStyle(
+              //         fontSize: 18,
+              //         fontWeight: FontWeight.w700,
+              //       ),
+              //       maxLines: 1,
+              //     ),
+              //   ],
+              // ),
+              //     trailing: Column(
+              //       mainAxisAlignment: MainAxisAlignment.center,
+              //       children: [],
+              //     ),
+              //     expandedCrossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       Padding(
+              //         padding: const EdgeInsets.symmetric(
+              //           vertical: 10,
+              //           horizontal: 10,
+              //         ),
+              //         child: Column(
+              //           crossAxisAlignment: CrossAxisAlignment.start,
+              //           children: [
+              //             getButton(context, 'VIEW ALL ITEMS', () {}),
+              //             sizedBox(10, 0),
+              //             Text(
+              //               'Choose Country',
+              //               style: TextStyle(
+              //                 fontSize: 14,
+              //                 color: Theme.of(context).secondaryHeaderColor,
+              //               ),
+              //             ),
+              //             sizedBox(10, 0),
+              //             Container(
+              //               height: screenHeight(context) * 0.2,
+              //               child: (isLoading == true)
+              //                   ? Center(
+              //                       child: CircularProgressIndicator(),
+              //                     )
+              //                   : ListView.builder(
+              //                       shrinkWrap: true,
+              //                       itemCount: result.length,
+              //                       itemBuilder: (context, index) {
+              //                         return Container(
+              //                           padding: const EdgeInsets.symmetric(
+              //                             vertical: 10.0,
+              //                           ),
+              //                           child: Column(
+              //                             crossAxisAlignment:
+              //                                 CrossAxisAlignment.start,
+              //                             mainAxisAlignment:
+              //                                 MainAxisAlignment.spaceAround,
+              //                             children: [
+              //                               Text(
+              //                                 result[index].name,
+              //                                 style: TextStyle(
+              //                                   fontSize: 14,
+              //                                 ),
+              //                               ),
+              //                               Divider(
+              //                                 color:
+              //                                     Theme.of(context).buttonColor,
+              //                               ),
+              //                             ],
+              //                           ),
+              //                         );
+              //                       }),
+              //             )
+              //           ],
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
             );
           },
         )
