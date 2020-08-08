@@ -38,6 +38,8 @@ dependencies:
   infinity_page_view: ^1.0.0
   aws_s3_client: ^0.1.1
   rating_bar: ^0.2.0
+  flutter_range_slider: ^1.4.0
+  flutter_xlider: ^3.4.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

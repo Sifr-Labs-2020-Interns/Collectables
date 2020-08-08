@@ -1,7 +1,10 @@
+import 'package:Collectables/screens/portrait/shop/filtersPage.dart';
 import 'package:Collectables/utilities/index.dart';
+import 'package:Collectables/screens/portrait/shop/sortByPage.dart';
 
 class ItemsPagePortrait extends StatefulWidget {
-  @override
+  final bool autofocus;
+  ItemsPagePortrait({@required this.autofocus});
   _ItemsPagePortraitState createState() => _ItemsPagePortraitState();
 }
 
@@ -93,7 +96,7 @@ class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
                   child: TextField(
                     focusNode: myFocusNode,
                     controller: searchController,
-                    autofocus: true,
+                    autofocus: widget.autofocus,
                     cursorColor: Theme.of(context).primaryColor,
                     decoration: new InputDecoration(
                       border: InputBorder.none,
@@ -121,9 +124,22 @@ class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    getSearchFilters(Icons.filter_list, 'Filters', () {}),
                     getSearchFilters(
-                        Icons.compare_arrows, 'Price: Low to High', () {}),
+                      Icons.filter_list,
+                      'Filters',
+                      () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FiltersPage(),
+                          ),
+                        );
+                      },
+                    ),
+                    getSearchFilters(
+                        Icons.compare_arrows, sort[getCurrentIndex()], () {
+                      settingModalBottomSheet(context, () => setState(() {}));
+                    }),
                     IconButton(
                       onPressed: () {
                         setState(() {
@@ -271,7 +287,7 @@ class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
           Icon(
             icon,
           ),
-          sizedBox(0, 2),
+          sizedBox(0, 5),
           Text(text),
         ],
       ),

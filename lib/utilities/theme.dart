@@ -3,7 +3,6 @@ import 'package:Collectables/utilities/index.dart';
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   accentColor: Color(0xff00C569),
-  
   fontFamily: 'Montserrat',
   appBarTheme: AppBarTheme(
     elevation: 1.0,
@@ -18,7 +17,6 @@ ThemeData darkTheme = ThemeData(
     iconTheme: IconThemeData(
       color: Colors.white,
     ),
-    
   ),
   tabBarTheme: TabBarTheme(
     labelColor: Colors.white,
@@ -30,10 +28,12 @@ ThemeData darkTheme = ThemeData(
   cardColor: Color(0xff2A2C36),
   primaryColor: Colors.white,
   buttonColor: Color(0xff2A2C36),
+  canvasColor: Colors.transparent,
 );
 
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
+  canvasColor: Colors.transparent,
   backgroundColor: Colors.white,
   scaffoldBackgroundColor: Color(0xfffdfdfd),
   accentColor: Color(0xff00C569),

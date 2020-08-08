@@ -6,14 +6,6 @@ class HomeScreenPortrait extends StatefulWidget {
 }
 
 class _HomeScreenPortraitState extends State<HomeScreenPortrait> {
-  List<String> categories = [
-    'Coins',
-    'Stamps',
-    'Bank Notes',
-    'Antiques',
-    'Art'
-  ];
-
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: Container(
@@ -54,7 +46,7 @@ class _HomeScreenPortraitState extends State<HomeScreenPortrait> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      for (int i = 0; i < categories.length; i++)
+                      for (int i = 0; i < kCategories.length; i++)
                         Column(
                           children: [
                             CircleAvatar(
@@ -62,7 +54,7 @@ class _HomeScreenPortraitState extends State<HomeScreenPortrait> {
                             ),
                             sizedBox(10, 0),
                             Text(
-                              categories[i],
+                              kCategories[i],
                               style: TextStyle(fontSize: 11),
                             ),
                           ],

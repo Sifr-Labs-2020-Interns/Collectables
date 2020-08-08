@@ -153,6 +153,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.9"
+  flutter_range_slider:
+    dependency: "direct main"
+    description:
+      name: flutter_range_slider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.4.0"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -163,6 +170,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_xlider:
+    dependency: "direct main"
+    description:
+      name: flutter_xlider
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.4.0"
   font_awesome_flutter:
     dependency: transitive
     description:

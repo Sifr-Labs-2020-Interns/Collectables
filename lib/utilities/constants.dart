@@ -32,3 +32,26 @@ const konboardingtextdecorationlight = InputDecoration(
     borderSide: BorderSide(color: Colors.black, width: 2.0),
   ),
 );
+
+const List<String> kCategories = [
+  'Coins',
+  'Stamps',
+  'Bank Notes',
+  'Antiques',
+  'Art'
+];
+
+const List kContinents = [
+  'Asia',
+  'Europe',
+  'Americas',
+  'Africa',
+  'Oceania',
+];
+
+const List kCondition = [
+  'UNC',
+  'Fine',
+  'Good',
+  'Fair',
+];
