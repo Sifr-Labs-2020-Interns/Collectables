@@ -12,6 +12,7 @@ ThemeData darkTheme = ThemeData(
         color: Colors.white,
         fontSize: 20,
         fontWeight: FontWeight.w700,
+        fontFamily: 'Montserrat',
       ),
     ),
     iconTheme: IconThemeData(
@@ -51,6 +52,7 @@ ThemeData lightTheme = ThemeData(
         color: Colors.black,
         fontSize: 20,
         fontWeight: FontWeight.w700,
+        fontFamily: 'Montserrat',
       ),
     ),
     iconTheme: IconThemeData(

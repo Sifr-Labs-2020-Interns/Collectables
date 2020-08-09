@@ -1,8 +1,8 @@
 import 'package:Collectables/utilities/index.dart';
 
 class SlideItem extends StatelessWidget {
-  final int index;
-  SlideItem(this.index);
+  final String imageUrl;
+  SlideItem(this.imageUrl);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class SlideItem extends StatelessWidget {
           height: screenHeight(context) * 0.32,
           width: screenWidth(context),
           child: Image.network(
-            slideList[index].imageUrl,
+            imageUrl,
             fit: BoxFit.fill,
           ),
           decoration: BoxDecoration(

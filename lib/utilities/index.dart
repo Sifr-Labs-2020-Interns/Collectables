@@ -35,7 +35,7 @@ export 'package:Collectables/widgets/common/registrationIcons.dart';
 export 'package:Collectables/widgets/slider/slide_dots.dart';
 export 'package:Collectables/widgets/slider/slide_item.dart';
 export 'package:Collectables/widgets/slider/slide_model.dart';
-export 'package:Collectables/widgets/slider/advertBanner.dart';
+export 'package:Collectables/widgets/slider/sliderBanner.dart';
 export 'package:Collectables/widgets/homeHeader.dart';
 export 'package:Collectables/widgets/itemCard.dart';
 

@@ -1,21 +1,32 @@
+import 'package:Collectables/screens/portrait/shop/itemPage.dart';
 import 'package:Collectables/utilities/index.dart';
 
-Container getItemCardList(BuildContext context, Function setState) {
+Container getItemCardList(BuildContext context) {
   return Container(
     height: screenHeight(context) * 0.3,
     child: ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: 5,
       itemBuilder: (BuildContext context, int index) {
-        return getItemCard(context, setState);
+        return getItemCard(
+          context,
+          () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ItemPage(),
+              ),
+            );
+          },
+        );
       },
     ),
   );
 }
 
-InkWell getItemCard(BuildContext context, Function setState) {
+InkWell getItemCard(BuildContext context, Function onTap) {
   return InkWell(
-    onTap: () {},
+    onTap: onTap,
     child: Stack(
       children: [
         Container(
@@ -93,13 +104,7 @@ InkWell getItemCard(BuildContext context, Function setState) {
           top: 130,
           left: 100,
           child: GestureDetector(
-            onTap: () {
-              // if (favorite[index] != null)
-              //   favorite[index] = !favorite[index];
-              // else
-              //   favorite[index] = true;
-              // setState();
-            },
+            onTap: () {},
             child: Card(
               elevation: 2,
               shape: CircleBorder(),

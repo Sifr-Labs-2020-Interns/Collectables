@@ -27,7 +27,10 @@ class _HomeScreenPortraitState extends State<HomeScreenPortrait> {
           children: [
             Container(
               height: screenHeight(context) * 0.35,
-              child: AdvertBanner(),
+              child: SliderBanner(
+                slides: slideList,
+                autoScroll: true,
+              ),
             ),
             sizedBox(15, 0),
             Container(
@@ -64,15 +67,11 @@ class _HomeScreenPortraitState extends State<HomeScreenPortrait> {
                   sizedBox(15, 0),
                   getHomeHeader(context, 'Sale', 'Items currently on sale'),
                   sizedBox(5, 0),
-                  getItemCardList(context, () {
-                    setState(() {});
-                  }),
+                  getItemCardList(context),
                   sizedBox(5, 0),
                   getHomeHeader(context, 'New', 'Latest entries to the store!'),
                   sizedBox(5, 0),
-                  getItemCardList(context, () {
-                    setState(() {});
-                  }),
+                  getItemCardList(context),
                   sizedBox(5, 0),
                 ],
               ),

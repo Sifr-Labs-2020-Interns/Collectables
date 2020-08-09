@@ -1,4 +1,5 @@
 import 'package:Collectables/screens/portrait/shop/filtersPage.dart';
+import 'package:Collectables/screens/portrait/shop/itemPage.dart';
 import 'package:Collectables/utilities/index.dart';
 import 'package:Collectables/screens/portrait/shop/sortByPage.dart';
 
@@ -169,7 +170,17 @@ class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
                       (screenHeight(context) * 0.35),
                 ),
                 itemBuilder: (BuildContext context, int index) {
-                  return getItemCard(context, setState);
+                  return getItemCard(
+                    context,
+                    () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ItemPage(),
+                        ),
+                      );
+                    },
+                  );
                 })
             : ListView.builder(
                 itemCount: 5,
