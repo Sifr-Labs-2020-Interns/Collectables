@@ -23,7 +23,7 @@ class _LoginPagePortraitState extends State<LoginPagePortrait> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                getRegistrationHeader(3, 'Login', null),
+                getRegistrationHeader(3, false, 'Login', null),
                 Expanded(
                   flex: 4,
                   child: Column(

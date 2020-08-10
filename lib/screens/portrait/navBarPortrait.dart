@@ -1,3 +1,5 @@
+import 'package:Collectables/screens/portrait/cart/cartPagePortrait.dart';
+import 'package:Collectables/screens/portrait/favorites/favoritesPagePortrait.dart';
 import 'package:Collectables/utilities/index.dart';
 
 class NavigationBarPortrait extends StatefulWidget {
@@ -17,6 +19,8 @@ class _NavigationBarState extends State<NavigationBarPortrait> {
     final List<Widget> _children = [
       HomeScreenPortrait(),
       ShopScreenPortrait(),
+      CartScreenPortrait(),
+      FavoritesScreenPortrait(),
     ];
 
     return SafeArea(

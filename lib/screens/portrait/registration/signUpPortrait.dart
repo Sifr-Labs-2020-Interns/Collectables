@@ -24,7 +24,7 @@ class _SignUpPortraitState extends State<SignUpPortrait> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                getRegistrationHeader(2, 'Sign Up', () {
+                getRegistrationHeader(2, false, 'Sign Up', () {
                   Navigator.pop(context);
                 }),
                 Expanded(

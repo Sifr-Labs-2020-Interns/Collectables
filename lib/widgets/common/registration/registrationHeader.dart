@@ -1,12 +1,13 @@
 import 'package:Collectables/utilities/index.dart';
 
-Expanded getRegistrationHeader(int flex, String text, Function func) {
+Expanded getRegistrationHeader(
+    int flex, bool back, String text, Function func) {
   return Expanded(
     flex: flex,
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        (text != 'Login')
+        (back)
             ? GestureDetector(
                 onTap: () {
                   func();

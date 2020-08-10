@@ -1,37 +1,17 @@
 import 'package:Collectables/screens/portrait/shop/filtersPage.dart';
 import 'package:Collectables/screens/portrait/shop/itemPage.dart';
-import 'package:Collectables/utilities/index.dart';
 import 'package:Collectables/screens/portrait/shop/sortByPage.dart';
+import 'package:Collectables/utilities/index.dart';
 import 'package:Collectables/widgets/common/searchFilters.dart';
 
-class ItemsPagePortrait extends StatefulWidget {
-  final bool autofocus;
-  ItemsPagePortrait({@required this.autofocus});
-  _ItemsPagePortraitState createState() => _ItemsPagePortraitState();
+class FavoritesScreenPortrait extends StatefulWidget {
+  @override
+  _FavoritesScreenPortraitState createState() =>
+      _FavoritesScreenPortraitState();
 }
 
-class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
-  String searchText = '';
-  bool onSaved = false;
+class _FavoritesScreenPortraitState extends State<FavoritesScreenPortrait> {
   bool grid = true;
-  TextEditingController searchController = TextEditingController();
-  FocusNode myFocusNode;
-
-  @override
-  void initState() {
-    super.initState();
-
-    myFocusNode = FocusNode();
-  }
-
-  @override
-  void dispose() {
-    // Clean up the focus node when the Form is disposed.
-    myFocusNode.dispose();
-
-    super.dispose();
-  }
-
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
@@ -47,82 +27,16 @@ class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
             ),
           ),
         ),
-        actions: [
-          (searchText == '' || onSaved == true)
-              ? Padding(
-                  padding: EdgeInsets.only(
-                    right: 14.0,
-                    top: 5.0,
-                  ),
-                  child: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        onSaved = false;
-                        searchController.clear();
-                        searchText = '';
-                        myFocusNode.requestFocus();
-                      });
-                    },
-                    icon: Icon(
-                      Icons.search,
-                    ),
-                  ),
-                )
-              : Padding(
-                  padding: EdgeInsets.only(
-                    right: 14.0,
-                  ),
-                  child: IconButton(
-                    onPressed: () {
-                      setState(() {
-                        searchController.clear();
-                        searchText = '';
-                      });
-                    },
-                    icon: Icon(
-                      Icons.clear,
-                    ),
-                  ),
-                ),
-        ],
+        title: Text('Favorites'),
+        centerTitle: true,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(
-            screenHeight(context) * 0.13,
+            screenHeight(context) * 0.06,
           ),
           child: Padding(
             padding: EdgeInsets.symmetric(horizontal: 14.0),
             child: Column(
               children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 14.0),
-                  child: TextField(
-                    focusNode: myFocusNode,
-                    controller: searchController,
-                    autofocus: widget.autofocus,
-                    cursorColor: Theme.of(context).primaryColor,
-                    decoration: new InputDecoration(
-                      border: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                    ),
-                    onChanged: (value) {
-                      setState(() {
-                        searchText = value;
-                      });
-                    },
-                    onSubmitted: (value) {
-                      setState(() {
-                        onSaved = true;
-                      });
-                    },
-                    style: TextStyle(
-                      fontSize: 34,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -171,16 +85,38 @@ class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
                       (screenHeight(context) * 0.35),
                 ),
                 itemBuilder: (BuildContext context, int index) {
-                  return getItemCard(
-                    context,
-                    () {
-                      Navigator.push(
+                  return Stack(
+                    children: [
+                      getItemCard(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => ItemPage(),
+                        () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ItemPage(),
+                            ),
+                          );
+                        },
+                      ),
+                      Positioned(
+                        top: 20,
+                        left: 120,
+                        child: GestureDetector(
+                          onTap: () {
+                            // if (favorite[index] != null)
+                            //   favorite[index] = !favorite[index];
+                            // else
+                            //   favorite[index] = true;
+                            // setState();
+                          },
+                          child: Icon(
+                            Icons.clear,
+                            color: Theme.of(context).secondaryHeaderColor,
+                            size: 22,
+                          ),
                         ),
-                      );
-                    },
+                      ),
+                    ],
                   );
                 })
             : ListView.builder(
@@ -190,6 +126,24 @@ class _ItemsPagePortraitState extends State<ItemsPagePortrait> {
                     padding: EdgeInsets.symmetric(vertical: 8.0),
                     child: Stack(
                       children: [
+                        Positioned(
+                          top: 15,
+                          left: 295,
+                          child: GestureDetector(
+                            onTap: () {
+                              // if (favorite[index] != null)
+                              //   favorite[index] = !favorite[index];
+                              // else
+                              //   favorite[index] = true;
+                              // setState();
+                            },
+                            child: Icon(
+                              Icons.clear,
+                              color: Theme.of(context).secondaryHeaderColor,
+                              size: 22,
+                            ),
+                          ),
+                        ),
                         Positioned(
                           top: 60,
                           left: 280,

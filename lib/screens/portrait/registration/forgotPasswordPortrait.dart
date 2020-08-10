@@ -5,7 +5,7 @@ class ForgotPasswordPortrait extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController emailController = new TextEditingController();
     return SafeArea(
-          child: Scaffold(
+      child: Scaffold(
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: SingleChildScrollView(
           child: Container(
@@ -17,7 +17,7 @@ class ForgotPasswordPortrait extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                getRegistrationHeader(3, 'Forgot Password', () {
+                getRegistrationHeader(3, true, 'Forgot Password', () {
                   Navigator.pop(context);
                 }),
                 Expanded(

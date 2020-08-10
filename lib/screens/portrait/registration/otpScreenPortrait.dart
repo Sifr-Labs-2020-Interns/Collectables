@@ -26,7 +26,7 @@ class _OTPScreenPortraitState extends State<OTPScreenPortrait> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                getRegistrationHeader(3, 'Verify OTP', () {
+                getRegistrationHeader(3, true, 'Verify OTP', () {
                   Navigator.pop(context);
                 }),
                 Text('A verification code has been sent to'),
