@@ -167,10 +167,16 @@ class CheckoutPage extends StatelessWidget {
               context,
               'SUBMIT ORDER',
               () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => CheckoutPage(),
+                //   ),
+                // );
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CheckoutPage(),
+                    builder: (context) => CardPage(),
                   ),
                 );
               },
