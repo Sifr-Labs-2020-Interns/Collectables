@@ -1,3 +1,4 @@
+import 'package:Collectables/screens/portrait/cart/checkoutPage.dart';
 import 'package:Collectables/utilities/index.dart';
 
 class CartScreenPortrait extends StatefulWidget {
@@ -146,16 +147,34 @@ class _CartScreenPortraitState extends State<CartScreenPortrait> {
       ),
       bottomSheet: Padding(
         padding: const EdgeInsets.all(14.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text('Total Amount:'),
-            Text(
-              'AED 12',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Total Amount:'),
+                Text(
+                  'AED 12',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ],
             ),
+            sizedBox(20, 0),
+            getButton(
+              context,
+              'CHECKOUT',
+              () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CheckoutPage(),
+                  ),
+                );
+              },
+            )
           ],
         ),
       ),
