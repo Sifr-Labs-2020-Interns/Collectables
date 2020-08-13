@@ -117,7 +117,7 @@ class _CardPageState extends State<CardPage> {
                             child: getTextField(context, 'CVV',
                                 cardNameController, TextInputType.number),
                           ),
-                          sizedBox(10, 0),
+                          sizedBox(20, 0),
                           CheckboxListTile(
                             title: Text("Use as default payment method"),
                             value: newCardCheckedValue,

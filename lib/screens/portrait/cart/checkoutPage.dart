@@ -1,4 +1,6 @@
 import 'package:Collectables/screens/portrait/cart/cardPage.dart';
+import 'package:Collectables/screens/portrait/cart/shippingAddressPage.dart';
+import 'package:Collectables/screens/portrait/cart/successPage.dart';
 import 'package:Collectables/utilities/index.dart';
 
 class CheckoutPage extends StatelessWidget {
@@ -173,10 +175,22 @@ class CheckoutPage extends StatelessWidget {
                 //     builder: (context) => CheckoutPage(),
                 //   ),
                 // );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => CardPage(),
+                //   ),
+                // );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => ShippingAddressPage(),
+                //   ),
+                // );
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CardPage(),
+                    builder: (context) => SuccessPage(),
                   ),
                 );
               },
