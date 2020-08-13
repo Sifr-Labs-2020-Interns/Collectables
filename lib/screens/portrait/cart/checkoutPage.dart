@@ -169,12 +169,12 @@ class CheckoutPage extends StatelessWidget {
               context,
               'SUBMIT ORDER',
               () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => CheckoutPage(),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CheckoutPage(),
+                  ),
+                );
                 // Navigator.push(
                 //   context,
                 //   MaterialPageRoute(
@@ -187,12 +187,12 @@ class CheckoutPage extends StatelessWidget {
                 //     builder: (context) => ShippingAddressPage(),
                 //   ),
                 // );
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => SuccessPage(),
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => SuccessPage(),
+                //   ),
+                // );
               },
             )
           ],
